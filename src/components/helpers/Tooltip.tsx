@@ -28,7 +28,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ children, tooltipText }) => {
     return (
         <>
             {showTooltip && (
-                <div className="tooltip" style={{ top: pageY, left: pageX + 50 }}>
+                <div className="tooltip" style={{ top: pageY - 160, left: pageX + 50 }}>
                     <div className="tooltipContent">
                         <BodyText>{tooltipText}</BodyText>
                     </div>
