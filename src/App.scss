@@ -1,0 +1,28 @@
+.App {
+  margin: 48px;
+
+  .VideoComponent {
+    width: 100%;
+    background: black;
+  }
+
+  .PosterCategories {
+    .MoviePanelContainer {
+      .Posters {
+        display: flex;
+        overflow-x: scroll;
+        gap: 12px;
+
+        .SinglePoster {
+          width: 200vw;
+          text-align: center;
+          cursor: pointer;
+
+          img {
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}
