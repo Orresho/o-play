@@ -5,11 +5,13 @@
         gap: 12px;
 
         .SinglePoster {
-          width: 200px;
           text-align: center;
           cursor: pointer;
+          height: 330px;
 
           img {
+            width: 200px;
+            height: 300px;
             border-radius: 8px;
           }
         }

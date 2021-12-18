@@ -1,12 +1,13 @@
 
 .tooltip {
     position: absolute;
-    width: 280px;
+    width: 308px;
     color: white;
     background: rgba($color: #000000, $alpha: .7);
-    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    border-radius: 4px;
     .tooltipContent {
-        padding: 12px;
+        padding: 16px;
         line-height: 18px;
     }
 }

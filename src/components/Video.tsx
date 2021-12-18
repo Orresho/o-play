@@ -23,7 +23,7 @@ export const Video: React.FC<VideoProps> = ({ selectedVideo }) => {
 
     return (
         <div className="VideoContainer">
-            <video controls width="100%" height="400" ref={videoRef} autoPlay>
+            <video controls width="100%" height="450" ref={videoRef} autoPlay>
                 <source src={selectedVideo}
                     type="video/mp4" />
                 Sorry, your browser doesn't support embedded videos.
