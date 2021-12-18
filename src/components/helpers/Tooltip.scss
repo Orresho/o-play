@@ -3,9 +3,10 @@
     position: absolute;
     width: 280px;
     color: white;
-    background: rgba($color: #000000, $alpha: .5);
+    background: rgba($color: #000000, $alpha: .7);
     border-radius: 6px;
     .tooltipContent {
-        margin: 8px;
+        padding: 12px;
+        line-height: 18px;
     }
 }

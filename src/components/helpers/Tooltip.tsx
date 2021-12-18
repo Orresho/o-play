@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BodyText } from './BodyText';
-import './Image.scss';
+import './Tooltip.scss';
 
-interface ImageProps {
-    src: string;
-    alt?: string;
-    tooltipText?: string;
+interface TooltipProps {
+    tooltipText: string;
 }
 
-export const Image: React.FC<ImageProps> = ({ tooltipText, src, alt }) => {
+export const Tooltip: React.FC<TooltipProps> = ({ children, tooltipText }) => {
     const [hover, setHover] = useState<boolean>(false);
     const [event, setEvent] = useState<MouseEvent | null>(null);
 
@@ -43,10 +41,7 @@ export const Image: React.FC<ImageProps> = ({ tooltipText, src, alt }) => {
                 onMouseOut={() => {
                     setHover(false);
                 }}>
-                <img
-                    src={src}
-                    alt={alt}
-                />
+                {children}
             </div>
         </>
     )

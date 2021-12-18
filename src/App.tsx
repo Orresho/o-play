@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './App.scss';
 import axios from 'axios';
 import { MoviesData } from './types';
@@ -9,9 +9,8 @@ import { Margin } from './components/helpers/Margin';
 const moviePostersUrl = 'https://gist.githubusercontent.com/jocke138/056a510a33af4d87f1b39d88a6f9dc67/raw/6fe88083f996162a5c335bd4ec7278cdcf2eef78/movies.json'
 
 const App: React.FC = () => {
-
   const [moviesData, setMoviesData] = React.useState<MoviesData | null>(null);
-  const [hasError, setHasError] = React.useState<any>(null); // Could be any error
+  const [hasError, setHasError] = React.useState<any>(null); // Generic, could be any kind of error
   const [selectedVideo, setSelectedVideo] = React.useState<string | undefined>(undefined);
 
   React.useEffect(() => {
@@ -24,14 +23,14 @@ const App: React.FC = () => {
       // first video in the first panel as temporary initial
       setSelectedVideo(res.data.panels[0].items[0].video)
     })
-    //Todo: fixa nått fint fel - Gör även en mission control där användaren kan trigga fel i url:n tex för att simulera felet här
+    //Todo: rendera nått snyggt med fel - Gör även en mission control där användaren kan trigga fel i url:n tex för att simulera ett fel?
     .catch((error) => {
       console.error(error)
       setHasError(true)
     });
 
 
-  if (!moviesData && !selectedVideo) {
+  if (!moviesData || !selectedVideo) {
     return <div>loading with placeholders or similar...</div>
   }
 
@@ -44,7 +43,7 @@ const App: React.FC = () => {
       <Video selectedVideo={selectedVideo} />
       <Margin bottom={42} />
       <PosterCategories 
-        panels={moviesData?.panels} 
+        panels={moviesData.panels} 
         setSelectedVideo={setSelectedVideo} />
     </div>
   )

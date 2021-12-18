@@ -6,7 +6,6 @@ interface VideoProps {
 }
 
 export const Video: React.FC<VideoProps> = ({ selectedVideo }) => {
-
     const videoRef = useRef<any>();
     const previousUrl = useRef(selectedVideo);
 
