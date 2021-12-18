@@ -13,7 +13,7 @@ const PosterCategories: React.FC<PosterCategoriesProps> = ({ panels, setSelected
         <div className="PosterCategories">
             {panels?.map((panel, i) => (
                 <div key={i}>
-                    <h3>{panel.title}</h3>
+                    <h2>{panel.title}</h2>
                     <div className="PostersRow">
                         {panel?.items.map((poster, i) => (
                             <div key={i} className="SinglePoster" onClick={() => setSelectedVideo(poster.video)}>
